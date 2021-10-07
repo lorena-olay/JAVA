@@ -1,0 +1,42 @@
+package com.mycompany.p21lorena;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+/**
+ *
+ * @author lorena
+ */
+public class parte_b {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //final int HORAS_MASTER = 975;
+        final int HORAS_PROFE = 150;
+        // TODO code application logic here
+        /*    Modifica el ejercicio anterior para que la lectura de datos y la 
+        salida por pantalla usen diálogos JOptionPane .
+        Además, en esta parte, el número de horas anuales de los máster se debe 
+        poder introducir por teclado, también usando JOptionPane.*/
+        //pedimos los datos de la cantidad de masteres que se van a impartir este año
+        String m = JOptionPane.showInputDialog("Dime el número de másters que se impartirán en la univerdidad este año: " + "\n");
+        double nmaster = Double.parseDouble(m);
+        //pedimos las horas de los másters de este año
+        String n = JOptionPane.showInputDialog("Dime el número de horas anuales de los másters: " + "\n");
+        double horas_de_masters = Double.parseDouble(n);
+        //calculamos las horas de enseñanza que hay que cubrir este año
+        double htrabajo = nmaster * horas_de_masters;
+        //calculamos la cantidad de profesores que necesitamos
+        double cuantos_profes = htrabajo / HORAS_PROFE;
+        //mostramos el resultado: la cantidad de profesores que necesitamos este año
+        JOptionPane.showMessageDialog(null, "Esta es la cantidad de profesores que necesitamos este año: "
+                + (int) Math.ceil(cuantos_profes));
+    }
+
+}
