@@ -1,0 +1,46 @@
+package com.mycompany.p21lorena;
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+/**
+ *
+ * @author lorena
+ */
+public class parte_a {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        final int HORAS_MASTER = 975;
+        final int HORAS_PROFE = 150;
+        /*    La Universidad de Estepona tiene un número anual de másteres que 
+        impartir. Realiza un programa que calcule el total de profesores/as que
+        necesita la Universidad para impartir los másteres, en función del número 
+        de grupos de máster a los que se van a dar clase, sabiendo que un profesor 
+        no puede tener más de 150 horas de clase anuales y que todos los másteres 
+        tienen 975 horas de clase al año, cada uno. 
+        En esta parte los datos deben leerse por teclado usando Scanner y mostrarse 
+        usando la consola, usando System. 
+        Ten en cuenta que el número de profesores/as debe ser un número entero. No 
+        se pueden tener 13,3 profesores, en ese caso hay que tener 14 profesores, 
+        siempre redondeando hacia arriba. Para ello usa el método ceil() de la clase Math.*/
+        // TODO code application logic here
+        //pedimos los datos de la cantidad de masteres que se van a impartir este año
+        Scanner entradaTeclado = new Scanner(System.in);
+        System.out.print("Dime el número de másters que se impartirán en la univerdidad este año: " + "\n");
+        int nmaster = entradaTeclado.nextInt();
+        //calculamos las horas de enseñanza que hay que cubrir este año
+        double htrabajo = nmaster * HORAS_MASTER;
+        //calculamos la cantidad de profesores que necesitamos
+        double cuantos_profes = htrabajo / HORAS_PROFE;
+        //mostramos el resultado: la cantidad de profesores que necesitamos este año
+        System.out.println("Esta es la cantidad de profesores que necesitamos este año: "
+                + (int) Math.ceil(cuantos_profes));
+    }
+
+}
